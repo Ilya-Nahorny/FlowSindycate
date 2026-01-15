@@ -21,6 +21,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow: hidden;
+  height: 100%;
 }
 
 body {
@@ -33,8 +35,17 @@ body {
   background: $bg-primary;
   color: $text-primary;
   overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100%;
+  width: 100%;
+  position: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  // Prevent touch scrolling on mobile
+  touch-action: none;
+  -ms-touch-action: none;
 }
 
 // Custom scrollbar
