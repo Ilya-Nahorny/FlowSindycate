@@ -1,8 +1,19 @@
 <template>
   <div class="video-background">
-    <!-- Video Element -->
+    <!-- YouTube Video -->
+    <iframe
+      v-if="youtubeId"
+      ref="youtubeRef"
+      class="video-element youtube-iframe"
+      :src="youtubeEmbedUrl"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+    ></iframe>
+
+    <!-- Regular Video Element -->
     <video
-      v-if="videoSrc"
+      v-else-if="videoSrc"
       ref="videoRef"
       class="video-element"
       :src="videoSrc"
@@ -38,6 +49,10 @@ const props = defineProps({
     type: String,
     default: ''
   },
+  youtubeUrl: {
+    type: String,
+    default: ''
+  },
   poster: {
     type: String,
     default: ''
@@ -63,8 +78,32 @@ const props = defineProps({
 })
 
 const videoRef = ref(null)
+const youtubeRef = ref(null)
 const videoLoaded = ref(false)
 const videoError = ref(false)
+
+// Extract YouTube video ID from URL
+const youtubeId = computed(() => {
+  if (!props.youtubeUrl) return null
+  
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/,
+    /youtube\.com\/embed\/([^&\n?#]+)/
+  ]
+  
+  for (const pattern of patterns) {
+    const match = props.youtubeUrl.match(pattern)
+    if (match) return match[1]
+  }
+  
+  return null
+})
+
+// YouTube embed URL with autoplay and loop
+const youtubeEmbedUrl = computed(() => {
+  if (!youtubeId.value) return ''
+  return `https://www.youtube.com/embed/${youtubeId.value}?autoplay=1&mute=1&loop=1&playlist=${youtubeId.value}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1`
+})
 
 const overlayStyle = computed(() => ({
   backgroundColor: props.overlayColor,
@@ -127,6 +166,15 @@ onMounted(() => {
 
 .video-element {
   z-index: 1;
+}
+
+// YouTube iframe specific styling
+.youtube-iframe {
+  width: 100vw;
+  height: 56.25vw; // 16:9 aspect ratio
+  min-height: 100vh;
+  min-width: 177.77vh; // 16:9 aspect ratio
+  pointer-events: none;
 }
 
 .video-fallback {

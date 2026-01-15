@@ -1,5 +1,8 @@
 <template>
   <div class="about-section section-container">
+    <LanguageSwitcher />
+    <BottomNavigation />
+    
     <div class="section-content animate-fade-in-up">
       <h2 class="section-title">About Flow Syndicate</h2>
       <p class="section-subtitle">
@@ -30,7 +33,8 @@
 </template>
 
 <script setup>
-// Component logic here if needed
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
+import BottomNavigation from '@/components/BottomNavigation.vue'
 </script>
 
 <style lang="scss" scoped>
@@ -60,6 +64,7 @@
   justify-content: center;
   min-height: 100%;
   padding: $spacing-12 $spacing-8;
+  padding-bottom: 200px;
 }
 
 .section-content {

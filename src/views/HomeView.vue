@@ -1,7 +1,7 @@
 <template>
   <SectionLayout 
     :sections="sections" 
-    :show-indicators="true"
+    :show-indicators="false"
     :enable-keyboard-nav="true"
     :enable-wheel-nav="true"
   />
@@ -12,16 +12,22 @@ import { onMounted } from 'vue'
 import { useSectionStore } from '@/stores/section'
 import SectionLayout from '@/components/SectionLayout.vue'
 import HomeSection from './sections/HomeSection.vue'
+import PhilosophySection from './sections/PhilosophySection.vue'
+import ClassesSection from './sections/ClassesSection.vue'
 import AboutSection from './sections/AboutSection.vue'
 import ContactSection from './sections/ContactSection.vue'
 
 const sectionStore = useSectionStore()
 
-// Define sections for the public site
+// Define sections for the public site - matching navigation
 const sections = [
   { name: 'home', component: HomeSection },
-  { name: 'about', component: AboutSection },
-  { name: 'contact', component: ContactSection }
+  { name: 'philosophy', component: PhilosophySection },
+  { name: 'classes', component: ClassesSection },
+  { name: 'schedule', component: AboutSection }, // Reuse for now
+  { name: 'trainers', component: AboutSection }, // Reuse for now
+  { name: 'join', component: AboutSection }, // Reuse for now
+  { name: 'contacts', component: ContactSection }
 ]
 
 // Initialize section store
