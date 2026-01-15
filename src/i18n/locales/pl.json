@@ -1,7 +1,14 @@
 {
   "app": {
     "title": "Flow Syndicate",
-    "welcome": "Witamy w Flow Syndicate"
+    "welcome": "Flow Syndicate"
+  },
+  "hero": {
+    "title": "Flow Syndicate",
+    "subtitle": "Podnieś swoją taneczną podróż dzięki nowoczesnemu zarządzaniu zajęciami",
+    "cta_primary": "Rozpocznij",
+    "cta_secondary": "Zobacz Demo",
+    "scroll_hint": "Przewiń aby odkryć więcej"
   },
   "nav": {
     "home": "Strona główna",
