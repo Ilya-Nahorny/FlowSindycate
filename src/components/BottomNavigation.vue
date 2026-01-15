@@ -1,25 +1,33 @@
 <template>
   <nav class="bottom-navigation">
-    <div class="nav-container">
+    <div class="nav-container" ref="navContainer">
       <button
         v-for="item in navItems"
         :key="item.name"
+        :ref="el => { if (el) navItemRefs[item.name] = el }"
         :class="['nav-item', { active: activeSection === item.name }]"
         @click="navigateTo(item.name)"
       >
         {{ item.label }}
       </button>
     </div>
+    
+    <!-- Fade edges for mobile -->
+    <div class="nav-fade nav-fade-left"></div>
+    <div class="nav-fade nav-fade-right"></div>
   </nav>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { ref, computed, watch, nextTick, onMounted } from 'vue'
 import { useSectionStore } from '@/stores/section'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 const sectionStore = useSectionStore()
+
+const navContainer = ref(null)
+const navItemRefs = ref({})
 
 const navItems = [
   { name: 'home', label: 'Home' },
@@ -36,6 +44,44 @@ const activeSection = computed(() => sectionStore.currentSection)
 const navigateTo = (sectionName) => {
   sectionStore.setSection(sectionName)
 }
+
+// Scroll active item to center
+const scrollToActiveItem = () => {
+  if (!navContainer.value) return
+  
+  const activeItemEl = navItemRefs.value[activeSection.value]
+  if (!activeItemEl) return
+  
+  const container = navContainer.value
+  const item = activeItemEl
+  
+  // Calculate position to center the item
+  const containerWidth = container.offsetWidth
+  const itemLeft = item.offsetLeft
+  const itemWidth = item.offsetWidth
+  
+  const scrollPosition = itemLeft - (containerWidth / 2) + (itemWidth / 2)
+  
+  // Smooth scroll to position
+  container.scrollTo({
+    left: scrollPosition,
+    behavior: 'smooth'
+  })
+}
+
+// Watch for section changes
+watch(activeSection, () => {
+  nextTick(() => {
+    scrollToActiveItem()
+  })
+})
+
+// Initial scroll on mount
+onMounted(() => {
+  nextTick(() => {
+    scrollToActiveItem()
+  })
+})
 </script>
 
 <style lang="scss" scoped>
@@ -80,6 +126,7 @@ const navigateTo = (sectionName) => {
   padding: $spacing-4 $spacing-8;
   pointer-events: auto;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  position: relative;
 }
 
 .nav-item {
@@ -122,18 +169,26 @@ const navigateTo = (sectionName) => {
   }
 }
 
+// Fade edges
+.nav-fade {
+  display: none; // Hidden on desktop
+}
+
 // Responsive
 @media (max-width: 1024px) {
   .bottom-navigation {
     padding: $spacing-6 $spacing-4 $spacing-4;
+    position: relative;
   }
   
   .nav-container {
-    padding: $spacing-3 $spacing-4;
-    gap: $spacing-2;
+    padding: $spacing-3 $spacing-8;
+    gap: $spacing-3;
     overflow-x: auto;
+    overflow-y: hidden;
     justify-content: flex-start;
     border-radius: $radius-xl;
+    scroll-behavior: smooth;
     
     // Hide scrollbar but keep functionality
     scrollbar-width: none;
@@ -145,20 +200,68 @@ const navigateTo = (sectionName) => {
   }
   
   .nav-item {
-    padding: $spacing-2 $spacing-4;
-    font-size: $font-size-sm;
+    // Keep full size - don't shrink
+    flex-shrink: 0;
+    padding: $spacing-3 $spacing-5;
+    font-size: $font-size-base;
+  }
+  
+  // Show fade edges on mobile
+  .nav-fade {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+  }
+  
+  .nav-fade-left {
+    left: $spacing-4;
+    background: linear-gradient(to right, 
+      rgba(0, 0, 0, 0.8) 0%, 
+      transparent 100%
+    );
+    border-radius: $radius-xl 0 0 $radius-xl;
+  }
+  
+  .nav-fade-right {
+    right: $spacing-4;
+    background: linear-gradient(to left, 
+      rgba(0, 0, 0, 0.8) 0%, 
+      transparent 100%
+    );
+    border-radius: 0 $radius-xl $radius-xl 0;
   }
 }
 
 @media (max-width: 640px) {
+  .bottom-navigation {
+    padding: $spacing-4 $spacing-3 $spacing-3;
+  }
+  
   .nav-container {
-    padding: $spacing-2 $spacing-3;
-    gap: $spacing-1;
+    padding: $spacing-2 $spacing-6;
+    gap: $spacing-2;
   }
   
   .nav-item {
-    padding: $spacing-2 $spacing-3;
-    font-size: $font-size-xs;
+    padding: $spacing-2 $spacing-4;
+    font-size: $font-size-sm;
+  }
+  
+  .nav-fade {
+    width: 40px;
+  }
+  
+  .nav-fade-left {
+    left: $spacing-3;
+  }
+  
+  .nav-fade-right {
+    right: $spacing-3;
   }
 }
 </style>
