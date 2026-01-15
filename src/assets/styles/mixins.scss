@@ -1,0 +1,168 @@
+// ============================================
+// MIXINS & UTILITIES
+// ============================================
+
+// Glass Morphism Effect
+@mixin glass($blur: $blur-md, $opacity: 0.05, $border-opacity: 0.1) {
+  background: rgba(255, 255, 255, $opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid rgba(255, 255, 255, $border-opacity);
+}
+
+// Glass variants
+@mixin glass-light {
+  @include glass($blur-md, 0.05, 0.1);
+}
+
+@mixin glass-medium {
+  @include glass($blur-md, 0.08, 0.15);
+}
+
+@mixin glass-heavy {
+  @include glass($blur-lg, 0.12, 0.2);
+}
+
+// Glow Effect
+@mixin glow($color: $accent-primary, $intensity: 0.3) {
+  box-shadow: 0 0 20px rgba($color, $intensity);
+}
+
+// Smooth Transitions
+@mixin transition($properties...) {
+  transition-property: $properties;
+  transition-duration: $transition-base;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Flexbox Center
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Absolute Center
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Absolute Cover
+@mixin absolute-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Truncate Text
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Multi-line Truncate
+@mixin line-clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Hover Lift Effect
+@mixin hover-lift {
+  @include transition(transform, box-shadow);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Hover Glow Effect
+@mixin hover-glow($color: $accent-primary) {
+  @include transition(box-shadow);
+  
+  &:hover {
+    box-shadow: 0 0 20px rgba($color, 0.4);
+  }
+}
+
+// Scrollbar Styling
+@mixin custom-scrollbar($width: 8px, $track-color: transparent, $thumb-color: $border-primary) {
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: $track-color;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: $thumb-color;
+    border-radius: $radius-full;
+    
+    &:hover {
+      background: lighten($thumb-color, 10%);
+    }
+  }
+}
+
+// Responsive Breakpoints
+@mixin mobile {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 641px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin mobile-only {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: 641px) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+// Focus Styles
+@mixin focus-ring($color: $accent-primary) {
+  outline: 2px solid $color;
+  outline-offset: 2px;
+}
+
+@mixin focus-visible {
+  &:focus-visible {
+    @include focus-ring;
+  }
+}

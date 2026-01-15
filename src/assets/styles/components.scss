@@ -1,0 +1,401 @@
+// ============================================
+// REUSABLE COMPONENT STYLES
+// ============================================
+
+// ============================================
+// BUTTONS
+// ============================================
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-2;
+  padding: $spacing-3 $spacing-6;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-tight;
+  border-radius: $radius-lg;
+  border: none;
+  cursor: pointer;
+  transition: all $transition-base;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  outline: none;
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+// Button Variants
+.btn-primary {
+  background: $accent-primary;
+  color: $bg-primary;
+  
+  &:hover:not(:disabled) {
+    background: $accent-primary-hover;
+    transform: translateY(-2px);
+    box-shadow: $shadow-glow;
+  }
+  
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+}
+
+.btn-secondary {
+  background: $accent-secondary;
+  color: $text-primary;
+  
+  &:hover:not(:disabled) {
+    background: $accent-secondary-hover;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 136, 255, 0.3);
+  }
+  
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+}
+
+.btn-outline {
+  background: transparent;
+  color: $text-primary;
+  border: 2px solid $border-primary;
+  
+  &:hover:not(:disabled) {
+    border-color: $accent-primary;
+    color: $accent-primary;
+    box-shadow: $shadow-md;
+  }
+}
+
+.btn-ghost {
+  background: transparent;
+  color: $text-primary;
+  
+  &:hover:not(:disabled) {
+    background: $glass-bg-light;
+    color: $accent-primary;
+  }
+}
+
+.btn-glass {
+  @include glass-light;
+  color: $text-primary;
+  border-radius: $radius-xl;
+  
+  &:hover:not(:disabled) {
+    @include glass-medium;
+    transform: translateY(-2px);
+  }
+}
+
+// Button Sizes
+.btn-sm {
+  padding: $spacing-2 $spacing-4;
+  font-size: $font-size-sm;
+}
+
+.btn-lg {
+  padding: $spacing-4 $spacing-8;
+  font-size: $font-size-lg;
+}
+
+.btn-xl {
+  padding: $spacing-5 $spacing-10;
+  font-size: $font-size-xl;
+  border-radius: $radius-xl;
+}
+
+// Button States
+.btn-loading {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.6s linear infinite;
+  }
+}
+
+// ============================================
+// FORM ELEMENTS
+// ============================================
+
+.form-group {
+  margin-bottom: $spacing-6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: $spacing-2;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $text-secondary;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: $spacing-3 $spacing-4;
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+  color: $text-primary;
+  background: $bg-secondary;
+  border: 1px solid $border-primary;
+  border-radius: $radius-md;
+  transition: all $transition-base;
+  outline: none;
+  
+  &::placeholder {
+    color: $text-tertiary;
+  }
+  
+  &:focus {
+    border-color: $accent-primary;
+    box-shadow: 0 0 0 3px rgba($accent-primary, 0.1);
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  &.error {
+    border-color: $error;
+    
+    &:focus {
+      box-shadow: 0 0 0 3px $error-bg;
+    }
+  }
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-error {
+  display: block;
+  margin-top: $spacing-2;
+  font-size: $font-size-sm;
+  color: $error;
+}
+
+.form-help {
+  display: block;
+  margin-top: $spacing-2;
+  font-size: $font-size-sm;
+  color: $text-tertiary;
+}
+
+// Glass Input Variant
+.form-input-glass {
+  @include glass-light;
+  background: $glass-bg-light;
+  border-color: $glass-border;
+  
+  &:focus {
+    @include glass-medium;
+    border-color: $glass-border-strong;
+  }
+}
+
+// Checkbox & Radio
+.form-checkbox,
+.form-radio {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $border-primary;
+  border-radius: $radius-sm;
+  background: $bg-secondary;
+  cursor: pointer;
+  position: relative;
+  transition: all $transition-fast;
+  
+  &:checked {
+    background: $accent-primary;
+    border-color: $accent-primary;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 6px;
+      height: 10px;
+      border: solid $bg-primary;
+      border-width: 0 2px 2px 0;
+      transform: translate(-50%, -60%) rotate(45deg);
+    }
+  }
+  
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.form-radio {
+  border-radius: $radius-full;
+  
+  &:checked::after {
+    width: 8px;
+    height: 8px;
+    border: none;
+    border-radius: $radius-full;
+    background: $bg-primary;
+    transform: translate(-50%, -50%);
+  }
+}
+
+// ============================================
+// CARDS
+// ============================================
+
+.card {
+  background: $bg-secondary;
+  border: 1px solid $border-primary;
+  border-radius: $radius-xl;
+  padding: $spacing-6;
+  transition: all $transition-base;
+  
+  &:hover {
+    border-color: $border-accent;
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+.card-glass {
+  @include glass-light;
+  border-radius: $radius-xl;
+  padding: $spacing-6;
+  transition: all $transition-base;
+  
+  &:hover {
+    @include glass-medium;
+    transform: translateY(-2px);
+  }
+}
+
+.card-title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $spacing-3;
+  color: $text-primary;
+}
+
+.card-text {
+  font-size: $font-size-base;
+  color: $text-secondary;
+  line-height: $line-height-relaxed;
+}
+
+// ============================================
+// BADGES
+// ============================================
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: $spacing-1 $spacing-3;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  border-radius: $radius-full;
+  white-space: nowrap;
+}
+
+.badge-primary {
+  background: rgba($accent-primary, 0.2);
+  color: $accent-primary;
+}
+
+.badge-secondary {
+  background: rgba($accent-secondary, 0.2);
+  color: $accent-secondary;
+}
+
+.badge-success {
+  background: $success-bg;
+  color: $success;
+}
+
+.badge-warning {
+  background: $warning-bg;
+  color: $warning;
+}
+
+.badge-error {
+  background: $error-bg;
+  color: $error;
+}
+
+// ============================================
+// TOOLTIPS
+// ============================================
+
+.tooltip {
+  position: relative;
+  
+  &::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    padding: $spacing-2 $spacing-3;
+    background: $bg-elevated;
+    color: $text-primary;
+    font-size: $font-size-sm;
+    border-radius: $radius-md;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $transition-fast;
+    z-index: $z-tooltip;
+  }
+  
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+// ============================================
+// DIVIDERS
+// ============================================
+
+.divider {
+  height: 1px;
+  background: $border-primary;
+  margin: $spacing-6 0;
+}
+
+.divider-vertical {
+  width: 1px;
+  height: 100%;
+  background: $border-primary;
+  margin: 0 $spacing-6;
+}
