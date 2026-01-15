@@ -1,8 +1,5 @@
 <template>
   <div class="contact-section section-container">
-    <LanguageSwitcher />
-    <BottomNavigation />
-    
     <div class="section-content animate-fade-in-up">
       <h2 class="section-title">Get In Touch</h2>
       <p class="section-subtitle">
@@ -52,8 +49,6 @@
 
 <script setup>
 import { reactive } from 'vue'
-import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
-import BottomNavigation from '@/components/BottomNavigation.vue'
 
 const formData = reactive({
   name: '',

@@ -1,16 +1,25 @@
 <template>
-  <SectionLayout 
-    :sections="sections" 
-    :show-indicators="false"
-    :enable-keyboard-nav="true"
-    :enable-wheel-nav="true"
-  />
+  <div class="home-view">
+    <!-- Global Navigation - Outside transitions -->
+    <LanguageSwitcher />
+    <BottomNavigation />
+    
+    <!-- Section Content with Fade Transition -->
+    <SectionLayout 
+      :sections="sections" 
+      :show-indicators="false"
+      :enable-keyboard-nav="true"
+      :enable-wheel-nav="true"
+    />
+  </div>
 </template>
 
 <script setup>
 import { onMounted } from 'vue'
 import { useSectionStore } from '@/stores/section'
 import SectionLayout from '@/components/SectionLayout.vue'
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
+import BottomNavigation from '@/components/BottomNavigation.vue'
 import HomeSection from './sections/HomeSection.vue'
 import PhilosophySection from './sections/PhilosophySection.vue'
 import ClassesSection from './sections/ClassesSection.vue'
@@ -38,5 +47,10 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-// Styles are handled by SectionLayout component
+.home-view {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
 </style>

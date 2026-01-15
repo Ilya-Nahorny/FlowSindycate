@@ -1,8 +1,5 @@
 <template>
   <div class="classes-section section-container">
-    <LanguageSwitcher />
-    <BottomNavigation />
-    
     <div class="section-content animate-fade-in-up">
       <h2 class="section-title">Classes</h2>
       <p class="section-text">
@@ -13,8 +10,7 @@
 </template>
 
 <script setup>
-import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
-import BottomNavigation from '@/components/BottomNavigation.vue'
+// Component logic
 </script>
 
 <style lang="scss" scoped>

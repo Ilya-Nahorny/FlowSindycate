@@ -8,12 +8,6 @@
       :blur="0"
     />
 
-    <!-- Language Switcher -->
-    <LanguageSwitcher />
-
-    <!-- Bottom Navigation -->
-    <BottomNavigation />
-
     <!-- Hero Content -->
     <div class="hero-container">
       <div class="hero-content">
@@ -43,8 +37,6 @@
 import { ref, onMounted } from 'vue'
 import { useSectionStore } from '@/stores/section'
 import VideoBackground from '@/components/VideoBackground.vue'
-import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
-import BottomNavigation from '@/components/BottomNavigation.vue'
 
 const sectionStore = useSectionStore()
 

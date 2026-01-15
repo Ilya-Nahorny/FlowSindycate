@@ -74,8 +74,8 @@ const navigateToSection = (sectionName) => {
   
   if (currentIndex === targetIndex) return
   
-  // Set transition direction
-  transitionName.value = targetIndex > currentIndex ? 'slide-up' : 'slide-down'
+  // Always use fade transition
+  transitionName.value = 'fade'
   
   sectionStore.setSection(sectionName)
 }
@@ -83,7 +83,7 @@ const navigateToSection = (sectionName) => {
 const navigateNext = () => {
   const currentIndex = props.sections.findIndex(s => s.name === currentSection.value)
   if (currentIndex < props.sections.length - 1) {
-    transitionName.value = 'slide-up'
+    transitionName.value = 'fade'
     navigateToSection(props.sections[currentIndex + 1].name)
   }
 }
@@ -91,7 +91,7 @@ const navigateNext = () => {
 const navigatePrev = () => {
   const currentIndex = props.sections.findIndex(s => s.name === currentSection.value)
   if (currentIndex > 0) {
-    transitionName.value = 'slide-down'
+    transitionName.value = 'fade'
     navigateToSection(props.sections[currentIndex - 1].name)
   }
 }
@@ -319,15 +319,23 @@ defineExpose({
   opacity: 0;
 }
 
-// Transition: Fade
-.fade-enter-active,
+// Transition: Fade (smooth and fast)
+.fade-enter-active {
+  transition: opacity 0.5s ease-in-out;
+}
+
 .fade-leave-active {
-  transition: opacity 0.4s ease;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
