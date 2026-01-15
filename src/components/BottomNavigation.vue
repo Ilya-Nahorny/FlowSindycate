@@ -1,20 +1,22 @@
 <template>
   <nav class="bottom-navigation">
-    <div class="nav-container" ref="navContainer">
-      <button
-        v-for="item in navItems"
-        :key="item.name"
-        :ref="el => { if (el) navItemRefs[item.name] = el }"
-        :class="['nav-item', { active: activeSection === item.name }]"
-        @click="navigateTo(item.name)"
-      >
-        {{ item.label }}
-      </button>
+    <div class="nav-wrapper">
+      <div class="nav-container" ref="navContainer">
+        <button
+          v-for="item in navItems"
+          :key="item.name"
+          :ref="el => { if (el) navItemRefs[item.name] = el }"
+          :class="['nav-item', { active: activeSection === item.name }]"
+          @click="navigateTo(item.name)"
+        >
+          {{ item.label }}
+        </button>
+      </div>
+      
+      <!-- Fade edges for mobile -->
+      <div class="nav-fade nav-fade-left"></div>
+      <div class="nav-fade nav-fade-right"></div>
     </div>
-    
-    <!-- Fade edges for mobile -->
-    <div class="nav-fade nav-fade-left"></div>
-    <div class="nav-fade nav-fade-right"></div>
   </nav>
 </template>
 
@@ -111,9 +113,14 @@ onMounted(() => {
   }
 }
 
-.nav-container {
+.nav-wrapper {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  pointer-events: auto;
+}
+
+.nav-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,7 +131,6 @@ onMounted(() => {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: $radius-full;
   padding: $spacing-4 $spacing-8;
-  pointer-events: auto;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   position: relative;
 }
@@ -178,7 +184,6 @@ onMounted(() => {
 @media (max-width: 1024px) {
   .bottom-navigation {
     padding: $spacing-6 $spacing-4 $spacing-4;
-    position: relative;
   }
   
   .nav-container {
@@ -210,27 +215,28 @@ onMounted(() => {
   .nav-fade {
     display: block;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 60px;
-    height: 100%;
+    top: 0;
+    bottom: 0;
+    width: 80px;
     pointer-events: none;
     z-index: 2;
   }
   
   .nav-fade-left {
-    left: $spacing-4;
+    left: 0;
     background: linear-gradient(to right, 
-      rgba(0, 0, 0, 0.8) 0%, 
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.6) 30%,
       transparent 100%
     );
     border-radius: $radius-xl 0 0 $radius-xl;
   }
   
   .nav-fade-right {
-    right: $spacing-4;
+    right: 0;
     background: linear-gradient(to left, 
-      rgba(0, 0, 0, 0.8) 0%, 
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.6) 30%,
       transparent 100%
     );
     border-radius: 0 $radius-xl $radius-xl 0;
@@ -253,15 +259,7 @@ onMounted(() => {
   }
   
   .nav-fade {
-    width: 40px;
-  }
-  
-  .nav-fade-left {
-    left: $spacing-3;
-  }
-  
-  .nav-fade-right {
-    right: $spacing-3;
+    width: 60px;
   }
 }
 </style>
