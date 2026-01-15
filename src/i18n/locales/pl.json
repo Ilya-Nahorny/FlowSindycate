@@ -1,0 +1,20 @@
+{
+  "app": {
+    "title": "Flow Syndicate",
+    "welcome": "Witamy w Flow Syndicate"
+  },
+  "nav": {
+    "home": "Strona główna",
+    "about": "O nas",
+    "classes": "Zajęcia",
+    "contact": "Kontakt"
+  },
+  "auth": {
+    "login": "Zaloguj",
+    "register": "Zarejestruj",
+    "logout": "Wyloguj",
+    "email": "Email",
+    "phone": "Telefon",
+    "password": "Hasło"
+  }
+}
