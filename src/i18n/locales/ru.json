@@ -1,0 +1,225 @@
+{
+  "navigation": {
+    "home": "Главная",
+    "philosophy": "Философия",
+    "classes": "Занятия",
+    "schedule": "Расписание",
+    "trainers": "Тренеры",
+    "join": "Присоединиться",
+    "contact": "Контакты",
+    "services": "Услуги"
+  },
+  "hero": {
+    "subtitle": "Преодолей границы. Найди свой flow.",
+    "cta": "Начни свой путь"
+  },
+  "philosophy": {
+    "subtitle": "Больше чем движение",
+    "description": "Flow Syndicate — это коллектив танцоров, художников и мечтателей, объединенных культурой брейкинга. Мы верим в аутентичность, креативность и силу сообщества. Здесь вы не просто изучаете движения—вы открываете свой уникальный голос через движение.",
+    "values": {
+      "authenticity": {
+        "title": "Аутентичность",
+        "subtitle": "Будь собой, всегда"
+      },
+      "community": {
+        "title": "Сообщество",
+        "subtitle": "Расти вместе"
+      },
+      "creativity": {
+        "title": "Креативность",
+        "subtitle": "Выражайся без границ"
+      }
+    }
+  },
+  "schedule": {
+    "days": {
+      "monday": "Понедельник",
+      "tuesday": "Вторник",
+      "wednesday": "Среда",
+      "thursday": "Четверг",
+      "friday": "Пятница",
+      "saturday": "Суббота",
+      "sunday": "Воскресенье"
+    },
+    "classes": {
+      "foundations": "Основы",
+      "flowState": "Состояние Flow",
+      "syndicateElite": "Syndicate Elite"
+    },
+    "trainerTBA": "Тренер уточняется"
+  },
+  "auth": {
+    "login": "Войти",
+    "register": "Регистрация",
+    "logout": "Выйти",
+    "email": "Email",
+    "phone": "Телефон",
+    "password": "Пароль",
+    "emailPlaceholder": "Введите email",
+    "phonePlaceholder": "+48123456789",
+    "passwordPlaceholder": "Введите пароль"
+  },
+  "dashboard": {
+    "title": "Личный кабинет",
+    "overview": "Обзор",
+    "children": "Участники",
+    "schedule": "Расписание",
+    "bookings": "Записи",
+    "payments": "Оплаты",
+    "statistics": "Статистика",
+    "plannedClasses": "Запланированные занятия",
+    "attendedClasses": "Посещенные занятия",
+    "upcomingClasses": "Ближайшие занятия",
+    "noUpcomingClasses": "Нет ближайших занятий",
+    "totalToPay": "К оплате",
+    "pay": "Оплатить",
+    "addChild": "Добавить участника",
+    "addFirstChild": "Добавьте первого участника",
+    "noChildren": "Вы еще не добавили участников",
+    "firstName": "Имя",
+    "lastName": "Фамилия",
+    "birthDate": "Дата рождения",
+    "birthDatePlaceholder": "ДД/ММ/ГГГГ",
+    "birthYear": "Год рождения",
+    "phone": "Телефон",
+    "years": "лет",
+    "firstNamePlaceholder": "Введите имя",
+    "lastNamePlaceholder": "Введите фамилию",
+    "birthYearPlaceholder": "Год",
+    "phonePlaceholder": "+48123456789",
+    "firstClassFree": "Первое занятие бесплатно!",
+    "firstClassFreeNote": "Ваше первое занятие бесплатное. Мы проверим по номеру телефона или email, является ли это вашей первой посещением.",
+    "dateError": {
+      "incomplete": "Введите полную дату",
+      "invalidDay": "Неверный день (должен быть 1-31)",
+      "invalidMonth": "Неверный месяц (должен быть 1-12)",
+      "invalidYear": "Неверный год (должен быть между 1900 и текущим годом)",
+      "invalidDate": "Такой даты не существует",
+      "futureDate": "Дата не может быть в будущем",
+      "tooOld": "Возраст не может превышать 120 лет"
+    },
+    "validation": {
+      "firstNameRequired": "Имя обязательно для заполнения",
+      "firstNameMinLength": "Имя должно содержать минимум 2 символа",
+      "firstNameMaxLength": "Имя не должно превышать 50 символов",
+      "firstNameInvalid": "Имя может содержать только буквы, пробелы, дефисы и апострофы",
+      "lastNameRequired": "Фамилия обязательна для заполнения",
+      "lastNameMinLength": "Фамилия должна содержать минимум 2 символа",
+      "lastNameMaxLength": "Фамилия не должна превышать 50 символов",
+      "lastNameInvalid": "Фамилия может содержать только буквы, пробелы, дефисы и апострофы",
+      "phoneRequired": "Номер телефона обязателен для заполнения",
+      "phoneMinLength": "Номер телефона должен содержать минимум 9 цифр",
+      "phoneMaxLength": "Номер телефона не должен превышать 15 цифр",
+      "phoneInvalid": "Введите корректный номер телефона (например, +48123456789)"
+    },
+    "confirmDeleteChild": "Вы уверены, что хотите удалить этого участника?",
+    "bookClass": "Записаться на занятие",
+    "selectChild": "Выберите участника",
+    "selectChildPlaceholder": "Выберите участника",
+    "classType": "Тип занятия",
+    "singleClass": "Разовое занятие",
+    "subscriptionWeekly": "1 раз в неделю",
+    "subscriptionBiweekly": "2 раза в неделю",
+    "date": "Дата",
+    "book": "Записаться",
+    "addChildFirst": "Сначала добавьте ребенка",
+    "noPlannedClasses": "Нет запланированных занятий",
+    "noAttendedClasses": "Нет посещенных занятий",
+    "status": {
+      "planned": "Запланировано",
+      "attended": "Посещено",
+      "missed": "Пропущено",
+      "cancelled": "Отменено"
+    },
+    "classType": {
+      "single": "Разовое",
+      "subscription_weekly": "1 раз/неделю",
+      "subscription_biweekly": "2 раза/неделю",
+      "individual": "Индивидуальное"
+    },
+    "paymentHistory": "История платежей",
+    "noPayments": "Нет платежей",
+    "payment": "Оплата",
+    "amount": "Сумма",
+    "paymentMethod": "Способ оплаты",
+    "paymentNote": "Оплата будет обработана безопасно через Przelewy24",
+    "paymentInDevelopment": "Интеграция платежей в разработке",
+    "paidAt": "Оплачено",
+    "paymentStatus": {
+      "pending": "Ожидает",
+      "paid": "Оплачено",
+      "failed": "Ошибка",
+      "refunded": "Возврат"
+    }
+  },
+  "admin": {
+    "title": "Админ",
+    "overview": "Обзор",
+    "users": "Пользователи",
+    "schedule": "Расписание",
+    "attendance": "Посещаемость",
+    "finances": "Финансы",
+    "children": "Участники",
+    "classes": "Занятия",
+    "viewAll": "Посмотреть все",
+    "quickActions": "Быстрые действия",
+    "manageSchedule": "Управление расписанием",
+    "markAttendance": "Отметить посещаемость",
+    "viewFinances": "Посмотреть финансы",
+    "noUsers": "Нет пользователей",
+    "noChildren": "Нет детей",
+    "role": {
+      "user": "Пользователь",
+      "admin": "Админ"
+    },
+    "addClass": "Добавить занятие",
+    "group": "Группа",
+    "selectGroup": "Выберите группу",
+    "dayOfWeek": "День недели",
+    "startTime": "Время начала",
+    "endTime": "Время окончания",
+    "trainerName": "Имя тренера",
+    "trainerNamePlaceholder": "Введите имя тренера",
+    "confirmDeleteClass": "Вы уверены, что хотите удалить это занятие?",
+    "totalBookings": "Всего записей",
+    "attended": "Посетили",
+    "missed": "Пропустили",
+    "attendanceRate": "Процент посещаемости",
+    "totalRevenue": "Общий доход",
+    "pendingPayments": "Ожидающие оплаты",
+    "financesNote": "Подробная финансовая аналитика и отчеты будут доступны здесь"
+  },
+  "common": {
+    "welcome": "Добро пожаловать в Flow Syndicate",
+    "login": "Войти",
+    "register": "Регистрация",
+    "getStarted": "Начать",
+    "learnMore": "Узнать больше",
+    "loading": "Загрузка...",
+    "cancel": "Отмена",
+    "add": "Добавить",
+    "delete": "Удалить"
+  },
+  "pages": {
+    "classes": {
+      "title": "Занятия",
+      "content": "Содержимое страницы занятий"
+    },
+    "trainers": {
+      "title": "Тренеры",
+      "content": "Содержимое страницы тренеров"
+    },
+    "join": {
+      "title": "Присоединиться",
+      "content": "Содержимое страницы присоединения"
+    },
+    "contact": {
+      "title": "Контакты",
+      "content": "Содержимое страницы контактов"
+    },
+    "services": {
+      "title": "Услуги",
+      "content": "Содержимое страницы услуг"
+    }
+  }
+}

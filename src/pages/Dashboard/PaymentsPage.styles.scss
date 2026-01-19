@@ -1,0 +1,230 @@
+/**
+ * Стили для страницы платежей
+ */
+
+.payments-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+.payments-page__title {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  font-family: var(--font-family-heading);
+}
+
+.payments-page__summary {
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-xl);
+}
+
+.payment-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.payment-summary__amount {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.payment-summary__label {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+.payment-summary__value {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.payments-page__history {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.payments-page__subtitle {
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+  font-family: var(--font-family-heading);
+}
+
+.payments-page__loading,
+.payments-page__empty {
+  padding: var(--spacing-4xl);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.payments-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.payment-card {
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.payment-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.payment-card__amount {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.payment-card__status {
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+
+  &--pending {
+    background: rgba(251, 191, 36, 0.1);
+    color: #fbbf24;
+  }
+
+  &--paid {
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+  }
+
+  &--failed {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+  }
+
+  &--refunded {
+    background: rgba(156, 163, 175, 0.1);
+    color: #9ca3af;
+  }
+}
+
+.payment-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.payment-card__date {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.payment-card__description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+}
+
+.payment-card__paid {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.payment-modal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.payment-modal__amount {
+  padding: var(--spacing-xl);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.payment-modal__amount-label {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+.payment-modal__amount-value {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.payment-modal__methods {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.payment-modal__methods-title {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+.payment-method {
+  padding: var(--spacing-lg);
+  background: var(--color-bg-tertiary);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+
+  &:hover {
+    border-color: var(--color-primary);
+    background: rgba(99, 102, 241, 0.1);
+  }
+
+  &--active {
+    border-color: var(--color-primary);
+    background: rgba(99, 102, 241, 0.2);
+  }
+}
+
+.payment-modal__note {
+  padding: var(--spacing-md);
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .payment-summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .payment-methods {
+    grid-template-columns: 1fr;
+  }
+}

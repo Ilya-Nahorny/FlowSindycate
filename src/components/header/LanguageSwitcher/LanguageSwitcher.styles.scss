@@ -1,0 +1,31 @@
+/**
+ * Стили для переключателя языков
+ */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  transition: all var(--transition-base);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--color-bg-tertiary);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  &__icon {
+    font-size: var(--font-size-base);
+    line-height: 1;
+  }
+
+  &__text {
+    font-weight: 500;
+  }
+}

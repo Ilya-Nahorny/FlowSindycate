@@ -1,0 +1,225 @@
+{
+  "navigation": {
+    "home": "Strona główna",
+    "philosophy": "Filozofia",
+    "classes": "Zajęcia",
+    "schedule": "Harmonogram",
+    "trainers": "Trenerzy",
+    "join": "Dołącz",
+    "contact": "Kontakty",
+    "services": "Usługi"
+  },
+  "hero": {
+    "subtitle": "Przekrocz granice. Znajdź swój flow.",
+    "cta": "Rozpocznij swoją podróż"
+  },
+  "philosophy": {
+    "subtitle": "Więcej niż ruch",
+    "description": "Flow Syndicate to kolektyw tancerzy, artystów i marzycieli zjednoczonych przez kulturę breakingu. Wierzymy w autentyczność, kreatywność i siłę społeczności. Tutaj nie tylko uczysz się ruchów—odkrywasz swój unikalny głos poprzez ruch.",
+    "values": {
+      "authenticity": {
+        "title": "Autentyczność",
+        "subtitle": "Bądź sobą, zawsze"
+      },
+      "community": {
+        "title": "Społeczność",
+        "subtitle": "Rośnij razem"
+      },
+      "creativity": {
+        "title": "Kreatywność",
+        "subtitle": "Wyrażaj się bez granic"
+      }
+    }
+  },
+  "schedule": {
+    "days": {
+      "monday": "Poniedziałek",
+      "tuesday": "Wtorek",
+      "wednesday": "Środa",
+      "thursday": "Czwartek",
+      "friday": "Piątek",
+      "saturday": "Sobota",
+      "sunday": "Niedziela"
+    },
+    "classes": {
+      "foundations": "Fundamenty",
+      "flowState": "Stan Flow",
+      "syndicateElite": "Syndicate Elite"
+    },
+    "trainerTBA": "Trener do ustalenia"
+  },
+  "auth": {
+    "login": "Zaloguj się",
+    "register": "Zarejestruj się",
+    "logout": "Wyloguj się",
+    "email": "Email",
+    "phone": "Telefon",
+    "password": "Hasło",
+    "emailPlaceholder": "Wprowadź email",
+    "phonePlaceholder": "+48123456789",
+    "passwordPlaceholder": "Wprowadź hasło"
+  },
+  "dashboard": {
+    "title": "Panel",
+    "overview": "Przegląd",
+    "children": "Uczestnicy",
+    "schedule": "Harmonogram",
+    "bookings": "Rezerwacje",
+    "payments": "Płatności",
+    "statistics": "Statystyki",
+    "plannedClasses": "Zaplanowane zajęcia",
+    "attendedClasses": "Odbyte zajęcia",
+    "upcomingClasses": "Nadchodzące zajęcia",
+    "noUpcomingClasses": "Brak nadchodzących zajęć",
+    "totalToPay": "Do zapłaty",
+    "pay": "Zapłać",
+    "addChild": "Dodaj uczestnika",
+    "addFirstChild": "Dodaj swojego pierwszego uczestnika",
+    "noChildren": "Nie dodałeś jeszcze żadnych uczestników",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "birthDate": "Data urodzenia",
+    "birthDatePlaceholder": "DD/MM/RRRR",
+    "birthYear": "Rok urodzenia",
+    "phone": "Telefon",
+    "years": "lat",
+    "firstNamePlaceholder": "Wprowadź imię",
+    "lastNamePlaceholder": "Wprowadź nazwisko",
+    "birthYearPlaceholder": "Rok",
+    "phonePlaceholder": "+48123456789",
+    "firstClassFree": "Pierwsze zajęcia za darmo!",
+    "firstClassFreeNote": "Twoje pierwsze zajęcia są bezpłatne. Sprawdzimy po numerze telefonu lub emailu, czy to Twoja pierwsza wizyta.",
+    "dateError": {
+      "incomplete": "Wprowadź pełną datę",
+      "invalidDay": "Nieprawidłowy dzień (musi być 1-31)",
+      "invalidMonth": "Nieprawidłowy miesiąc (musi być 1-12)",
+      "invalidYear": "Nieprawidłowy rok (musi być między 1900 a bieżącym rokiem)",
+      "invalidDate": "Ta data nie istnieje",
+      "futureDate": "Data nie może być w przyszłości",
+      "tooOld": "Wiek nie może przekraczać 120 lat"
+    },
+    "validation": {
+      "firstNameRequired": "Imię jest wymagane",
+      "firstNameMinLength": "Imię musi mieć co najmniej 2 znaki",
+      "firstNameMaxLength": "Imię nie może przekraczać 50 znaków",
+      "firstNameInvalid": "Imię może zawierać tylko litery, spacje, myślniki i apostrofy",
+      "lastNameRequired": "Nazwisko jest wymagane",
+      "lastNameMinLength": "Nazwisko musi mieć co najmniej 2 znaki",
+      "lastNameMaxLength": "Nazwisko nie może przekraczać 50 znaków",
+      "lastNameInvalid": "Nazwisko może zawierać tylko litery, spacje, myślniki i apostrofy",
+      "phoneRequired": "Numer telefonu jest wymagany",
+      "phoneMinLength": "Numer telefonu musi mieć co najmniej 9 cyfr",
+      "phoneMaxLength": "Numer telefonu nie może przekraczać 15 cyfr",
+      "phoneInvalid": "Wprowadź prawidłowy numer telefonu (np. +48123456789)"
+    },
+    "confirmDeleteChild": "Czy na pewno chcesz usunąć tego uczestnika?",
+    "bookClass": "Zapisz się na zajęcia",
+    "selectChild": "Wybierz uczestnika",
+    "selectChildPlaceholder": "Wybierz uczestnika",
+    "classType": "Typ zajęć",
+    "singleClass": "Pojedyncze zajęcia",
+    "subscriptionWeekly": "1x w tygodniu",
+    "subscriptionBiweekly": "2x w tygodniu",
+    "date": "Data",
+    "book": "Zapisz",
+    "addChildFirst": "Najpierw dodaj dziecko",
+    "noPlannedClasses": "Brak zaplanowanych zajęć",
+    "noAttendedClasses": "Brak odbyte zajęć",
+    "status": {
+      "planned": "Zaplanowane",
+      "attended": "Odbyte",
+      "missed": "Opuszczone",
+      "cancelled": "Anulowane"
+    },
+    "classType": {
+      "single": "Pojedyncze",
+      "subscription_weekly": "1x/tydzień",
+      "subscription_biweekly": "2x/tydzień",
+      "individual": "Indywidualne"
+    },
+    "paymentHistory": "Historia płatności",
+    "noPayments": "Brak płatności",
+    "payment": "Płatność",
+    "amount": "Kwota",
+    "paymentMethod": "Metoda płatności",
+    "paymentNote": "Płatność zostanie przetworzona bezpiecznie przez Przelewy24",
+    "paymentInDevelopment": "Integracja płatności jest w trakcie rozwoju",
+    "paidAt": "Zapłacono",
+    "paymentStatus": {
+      "pending": "Oczekujące",
+      "paid": "Zapłacone",
+      "failed": "Nieudane",
+      "refunded": "Zwrócone"
+    }
+  },
+  "admin": {
+    "title": "Admin",
+    "overview": "Przegląd",
+    "users": "Użytkownicy",
+    "schedule": "Harmonogram",
+    "attendance": "Frekwencja",
+    "finances": "Finanse",
+    "children": "Uczestnicy",
+    "classes": "Zajęcia",
+    "viewAll": "Zobacz wszystkie",
+    "quickActions": "Szybkie akcje",
+    "manageSchedule": "Zarządzaj harmonogramem",
+    "markAttendance": "Oznacz frekwencję",
+    "viewFinances": "Zobacz finanse",
+    "noUsers": "Brak użytkowników",
+    "noChildren": "Brak dzieci",
+    "role": {
+      "user": "Użytkownik",
+      "admin": "Admin"
+    },
+    "addClass": "Dodaj zajęcia",
+    "group": "Grupa",
+    "selectGroup": "Wybierz grupę",
+    "dayOfWeek": "Dzień tygodnia",
+    "startTime": "Godzina rozpoczęcia",
+    "endTime": "Godzina zakończenia",
+    "trainerName": "Imię trenera",
+    "trainerNamePlaceholder": "Wprowadź imię trenera",
+    "confirmDeleteClass": "Czy na pewno chcesz usunąć te zajęcia?",
+    "totalBookings": "Wszystkie rezerwacje",
+    "attended": "Obecni",
+    "missed": "Nieobecni",
+    "attendanceRate": "Wskaźnik frekwencji",
+    "totalRevenue": "Całkowity przychód",
+    "pendingPayments": "Oczekujące płatności",
+    "financesNote": "Szczegółowa analityka finansowa i raporty będą dostępne tutaj"
+  },
+  "common": {
+    "welcome": "Witamy w Flow Syndicate",
+    "login": "Zaloguj się",
+    "register": "Zarejestruj się",
+    "getStarted": "Rozpocznij",
+    "learnMore": "Dowiedz się więcej",
+    "loading": "Ładowanie...",
+    "cancel": "Anuluj",
+    "add": "Dodaj",
+    "delete": "Usuń"
+  },
+  "pages": {
+    "classes": {
+      "title": "Zajęcia",
+      "content": "Treść strony zajęć"
+    },
+    "trainers": {
+      "title": "Trenerzy",
+      "content": "Treść strony trenerów"
+    },
+    "join": {
+      "title": "Dołącz",
+      "content": "Treść strony dołączania"
+    },
+    "contact": {
+      "title": "Kontakty",
+      "content": "Treść strony kontaktów"
+    },
+    "services": {
+      "title": "Usługi",
+      "content": "Treść strony usług"
+    }
+  }
+}

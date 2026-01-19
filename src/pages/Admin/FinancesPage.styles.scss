@@ -1,0 +1,73 @@
+/**
+ * Стили для страницы финансов
+ */
+
+.finances-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+.finances-page__title {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  font-family: var(--font-family-heading);
+}
+
+.finances-page__loading {
+  padding: var(--spacing-4xl);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.finances-page__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.finances-page__summary {
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-xl);
+}
+
+.finance-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.finance-summary__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.finance-summary__label {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+.finance-summary__value {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+
+  &--primary {
+    color: var(--color-primary);
+  }
+
+  &--warning {
+    color: #fbbf24;
+  }
+}
+
+.finances-page__note {
+  padding: var(--spacing-lg);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  text-align: center;
+}

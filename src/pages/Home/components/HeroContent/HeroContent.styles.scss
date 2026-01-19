@@ -1,0 +1,82 @@
+/**
+ * Стили для Hero контента
+ */
+.hero-content {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-4xl) var(--spacing-xl);
+  padding-top: var(--spacing-4xl);
+
+  &__container {
+    max-width: 900px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xl);
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0;
+    font-family: var(--font-family-heading);
+
+    &-line {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 3rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+    font-weight: 400;
+
+    @media (max-width: 768px) {
+      font-size: var(--font-size-lg);
+    }
+  }
+
+  &__cta {
+    padding: var(--spacing-lg) var(--spacing-3xl);
+    border-radius: var(--radius-xl);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    transition: all var(--transition-base);
+    cursor: pointer;
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    border: none;
+    margin-top: var(--spacing-md);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      background: var(--color-bg-tertiary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      padding: var(--spacing-md) var(--spacing-2xl);
+      font-size: var(--font-size-sm);
+    }
+  }
+}

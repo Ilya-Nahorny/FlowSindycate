@@ -1,0 +1,226 @@
+{
+  "navigation": {
+    "home": "Home",
+    "philosophy": "Philosophy",
+    "classes": "Classes",
+    "schedule": "Schedule",
+    "trainers": "Trainers",
+    "join": "Join",
+    "contact": "Contacts",
+    "services": "Services"
+  },
+  "hero": {
+    "subtitle": "Break the limits. Find your flow.",
+    "cta": "Start Your Journey"
+  },
+  "philosophy": {
+    "subtitle": "More than movement",
+    "description": "Flow Syndicate is a collective of dancers, artists, and dreamers united by the culture of breaking. We believe in authenticity, creativity, and the power of community. Here, you don't just learn moves—you discover your unique voice through movement.",
+    "values": {
+      "authenticity": {
+        "title": "Authenticity",
+        "subtitle": "Be yourself, always"
+      },
+      "community": {
+        "title": "Community",
+        "subtitle": "Grow together"
+      },
+      "creativity": {
+        "title": "Creativity",
+        "subtitle": "Express without limits"
+      }
+    }
+  },
+  "schedule": {
+    "days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    },
+    "classes": {
+      "foundations": "Foundations",
+      "flowState": "Flow State",
+      "syndicateElite": "Syndicate Elite"
+    },
+    "trainerTBA": "Trainer TBA"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "email": "Email",
+    "phone": "Phone",
+    "password": "Password",
+    "emailPlaceholder": "Enter your email",
+    "phonePlaceholder": "+48123456789",
+    "passwordPlaceholder": "Enter your password"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "overview": "Overview",
+    "participants": "Participants",
+    "children": "Participants",
+    "schedule": "Schedule",
+    "bookings": "Bookings",
+    "payments": "Payments",
+    "statistics": "Statistics",
+    "plannedClasses": "Planned Classes",
+    "attendedClasses": "Attended Classes",
+    "upcomingClasses": "Upcoming Classes",
+    "noUpcomingClasses": "No upcoming classes",
+    "totalToPay": "Total to Pay",
+    "pay": "Pay",
+    "addChild": "Add Participant",
+    "addFirstChild": "Add Your First Participant",
+    "noChildren": "You haven't added any participants yet",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "birthDate": "Date of Birth",
+    "birthDatePlaceholder": "DD/MM/YYYY",
+    "birthYear": "Birth Year",
+    "phone": "Phone",
+    "years": "years",
+    "firstNamePlaceholder": "Enter first name",
+    "lastNamePlaceholder": "Enter last name",
+    "birthYearPlaceholder": "Year",
+    "phonePlaceholder": "+48123456789",
+    "firstClassFree": "First class is free!",
+    "firstClassFreeNote": "Your first class is free. We'll check by phone or email if this is your first visit.",
+    "dateError": {
+      "incomplete": "Please enter a complete date",
+      "invalidDay": "Invalid day (must be 1-31)",
+      "invalidMonth": "Invalid month (must be 1-12)",
+      "invalidYear": "Invalid year (must be between 1900 and current year)",
+      "invalidDate": "This date does not exist",
+      "futureDate": "Date cannot be in the future",
+      "tooOld": "Age cannot exceed 120 years"
+    },
+    "validation": {
+      "firstNameRequired": "First name is required",
+      "firstNameMinLength": "First name must be at least 2 characters",
+      "firstNameMaxLength": "First name must not exceed 50 characters",
+      "firstNameInvalid": "First name can only contain letters, spaces, hyphens and apostrophes",
+      "lastNameRequired": "Last name is required",
+      "lastNameMinLength": "Last name must be at least 2 characters",
+      "lastNameMaxLength": "Last name must not exceed 50 characters",
+      "lastNameInvalid": "Last name can only contain letters, spaces, hyphens and apostrophes",
+      "phoneRequired": "Phone number is required",
+      "phoneMinLength": "Phone number must be at least 9 digits",
+      "phoneMaxLength": "Phone number must not exceed 15 digits",
+      "phoneInvalid": "Please enter a valid phone number (e.g., +48123456789)"
+    },
+    "confirmDeleteChild": "Are you sure you want to delete this participant?",
+    "bookClass": "Book Class",
+    "selectChild": "Select Participant",
+    "selectChildPlaceholder": "Choose a participant",
+    "classType": "Class Type",
+    "singleClass": "Single Class",
+    "subscriptionWeekly": "1x per week",
+    "subscriptionBiweekly": "2x per week",
+    "date": "Date",
+    "book": "Book",
+    "addChildFirst": "Please add a child first",
+    "noPlannedClasses": "No planned classes",
+    "noAttendedClasses": "No attended classes",
+    "status": {
+      "planned": "Planned",
+      "attended": "Attended",
+      "missed": "Missed",
+      "cancelled": "Cancelled"
+    },
+    "classType": {
+      "single": "Single",
+      "subscription_weekly": "1x/week",
+      "subscription_biweekly": "2x/week",
+      "individual": "Individual"
+    },
+    "paymentHistory": "Payment History",
+    "noPayments": "No payments yet",
+    "payment": "Payment",
+    "amount": "Amount",
+    "paymentMethod": "Payment Method",
+    "paymentNote": "Payment will be processed securely through Przelewy24",
+    "paymentInDevelopment": "Payment integration is in development",
+    "paidAt": "Paid at",
+    "paymentStatus": {
+      "pending": "Pending",
+      "paid": "Paid",
+      "failed": "Failed",
+      "refunded": "Refunded"
+    }
+  },
+  "admin": {
+    "title": "Admin",
+    "overview": "Overview",
+    "users": "Users",
+    "schedule": "Schedule",
+    "attendance": "Attendance",
+    "finances": "Finances",
+    "children": "Participants",
+    "classes": "Classes",
+    "viewAll": "View All",
+    "quickActions": "Quick Actions",
+    "manageSchedule": "Manage Schedule",
+    "markAttendance": "Mark Attendance",
+    "viewFinances": "View Finances",
+    "noUsers": "No users yet",
+    "noChildren": "No children",
+    "role": {
+      "user": "User",
+      "admin": "Admin"
+    },
+    "addClass": "Add Class",
+    "group": "Group",
+    "selectGroup": "Select Group",
+    "dayOfWeek": "Day of Week",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "trainerName": "Trainer Name",
+    "trainerNamePlaceholder": "Enter trainer name",
+    "confirmDeleteClass": "Are you sure you want to delete this class?",
+    "totalBookings": "Total Bookings",
+    "attended": "Attended",
+    "missed": "Missed",
+    "attendanceRate": "Attendance Rate",
+    "totalRevenue": "Total Revenue",
+    "pendingPayments": "Pending Payments",
+    "financesNote": "Detailed financial analytics and reporting will be available here"
+  },
+  "common": {
+    "welcome": "Welcome to Flow Syndicate",
+    "login": "Login",
+    "register": "Register",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "loading": "Loading...",
+    "cancel": "Cancel",
+    "add": "Add",
+    "delete": "Delete"
+  },
+  "pages": {
+    "classes": {
+      "title": "Classes",
+      "content": "Classes page content"
+    },
+    "trainers": {
+      "title": "Trainers",
+      "content": "Trainers page content"
+    },
+    "join": {
+      "title": "Join",
+      "content": "Join page content"
+    },
+    "contact": {
+      "title": "Contacts",
+      "content": "Contact page content"
+    },
+    "services": {
+      "title": "Services",
+      "content": "Services page content"
+    }
+  }
+}
