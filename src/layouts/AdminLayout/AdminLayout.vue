@@ -26,12 +26,15 @@
         <div class="admin-layout__user-info">
           <span class="admin-layout__user-email">{{ authStore.user?.email }}</span>
         </div>
-        <button
-          class="admin-layout__logout"
-          @click="handleLogout"
-        >
-          {{ t('auth.logout') }}
-        </button>
+        <div class="admin-layout__footer-actions">
+          <LanguageSwitcher />
+          <button
+            class="admin-layout__logout"
+            @click="handleLogout"
+          >
+            {{ t('auth.logout') }}
+          </button>
+        </div>
       </div>
     </aside>
 

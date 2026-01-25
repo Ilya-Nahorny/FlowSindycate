@@ -97,8 +97,11 @@
       "invalidYear": "Invalid year (must be between 1900 and current year)",
       "invalidDate": "This date does not exist",
       "futureDate": "Date cannot be in the future",
-      "tooOld": "Age cannot exceed 120 years"
+      "tooOld": "Age cannot exceed 120 years",
+      "wrongDay": "This class is only available on {day}. Please select the correct day of the week."
     },
+    "availableOn": "Available only on",
+    "nextDates": "Next dates",
     "validation": {
       "firstNameRequired": "First name is required",
       "firstNameMinLength": "First name must be at least 2 characters",
@@ -204,11 +207,36 @@
   "pages": {
     "classes": {
       "title": "Classes",
-      "content": "Classes page content"
+      "bookButton": "Book Now",
+      "types": {
+        "beginners": {
+          "title": "Group Classes for Beginners",
+          "description": "Perfect for those just starting their journey in breaking. Learn the fundamentals in a supportive group environment.",
+          "age": "From 6 years old"
+        },
+        "advanced": {
+          "title": "Group Classes for Advanced",
+          "description": "For those who have mastered the basics. Take your skills to the next level with challenging routines and techniques.",
+          "age": "For experienced dancers"
+        },
+        "individual": {
+          "title": "Personal Training",
+          "description": "One-on-one sessions tailored to your goals. Get personalized attention and accelerate your progress.",
+          "age": "All ages"
+        }
+      }
     },
     "trainers": {
       "title": "Trainers",
-      "content": "Trainers page content"
+      "experience": "Experience",
+      "approach": "Teaching Approach",
+      "trainers": {
+        "ilya": {
+          "description": "Professional breaking instructor with years of experience in teaching and performing.",
+          "experience": "Over 10 years of experience in breaking, multiple competition wins, and extensive teaching background.",
+          "approach": "Focuses on building strong foundations while encouraging creativity and self-expression. Combines traditional breaking techniques with modern approaches to help students find their unique style."
+        }
+      }
     },
     "join": {
       "title": "Join",
@@ -216,7 +244,47 @@
     },
     "contact": {
       "title": "Contacts",
-      "content": "Contact page content"
+      "sendMessage": "Send us a message",
+      "contactInfo": "Contact Information",
+      "email": "Email",
+      "phone": "Phone",
+      "socialMedia": "Social Media",
+      "locations": {
+        "title": "Locations",
+        "breakingSpot": {
+          "name": "Breaking Spot",
+          "address": "23 Lutego 26, 61-743 Poznań",
+          "domofon": "Domofon: 122"
+        },
+        "bodyLabOne": {
+          "name": "Body Lab One",
+          "address": "Marcelińska 27, 60-801 Poznań"
+        }
+      },
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "namePlaceholder": "Enter your name",
+        "emailPlaceholder": "Enter your email",
+        "messagePlaceholder": "Enter your message",
+        "send": "Send Message",
+        "success": "Thank you! Your message has been sent successfully.",
+        "sendError": "An error occurred while sending the message. Please try again.",
+        "validationError": "Please fill in all fields correctly.",
+        "spamDetected": "Spam detected. Please try again.",
+        "tooManyRequests": "Please wait a moment before sending another message.",
+        "validation": {
+          "nameRequired": "Name is required",
+          "nameMinLength": "Name must be at least 2 characters",
+          "nameMaxLength": "Name must not exceed 100 characters",
+          "emailRequired": "Email is required",
+          "emailInvalid": "Please enter a valid email address",
+          "messageRequired": "Message is required",
+          "messageMinLength": "Message must be at least 10 characters",
+          "messageMaxLength": "Message must not exceed 2000 characters"
+        }
+      }
     },
     "services": {
       "title": "Services",

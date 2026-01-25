@@ -6,13 +6,13 @@
       {{ t('common.loading') }}
     </div>
 
-    <div v-else-if="adminStore.users.length === 0" class="users-page__empty">
+    <div v-else-if="regularUsers.length === 0" class="users-page__empty">
       {{ t('admin.noUsers') }}
     </div>
 
     <div v-else class="users-page__list">
       <div
-        v-for="user in adminStore.users"
+        v-for="user in regularUsers"
         :key="user.id"
         class="user-card glass-medium"
       >
@@ -39,8 +39,8 @@
               class="user-card__child"
             >
               {{ child.firstName }} {{ child.lastName }}
-              <span class="user-card__child-age">
-                ({{ new Date().getFullYear() - child.birthYear }} {{ t('dashboard.years') }})
+              <span v-if="child.birthDate" class="user-card__child-age">
+                ({{ getAge(child.birthDate) }} {{ t('dashboard.years') }})
               </span>
             </div>
           </div>
@@ -51,9 +51,10 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useAdminStore } from '@/stores/admin'
+import { UserRole } from '@/types'
 
 /**
  * Страница управления пользователями
@@ -61,6 +62,13 @@ import { useAdminStore } from '@/stores/admin'
 
 const { t } = useI18n()
 const adminStore = useAdminStore()
+
+/**
+ * Только обычные пользователи (без администраторов)
+ */
+const regularUsers = computed(() => {
+  return adminStore.users.filter(user => user.role === UserRole.USER)
+})
 
 /**
  * Получение количества детей пользователя
@@ -74,6 +82,21 @@ function getChildrenCount(userId: string): number {
  */
 function getChildrenByUserId(userId: string) {
   return adminStore.getChildrenByUserId(userId)
+}
+
+/**
+ * Вычисление возраста по дате рождения
+ */
+function getAge(birthDate: string): number {
+  if (!birthDate) return 0
+  const birth = new Date(birthDate)
+  const today = new Date()
+  let age = today.getFullYear() - birth.getFullYear()
+  const monthDiff = today.getMonth() - birth.getMonth()
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+    age--
+  }
+  return age
 }
 
 /**

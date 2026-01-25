@@ -123,6 +123,7 @@ import type { LoginData, RegisterData } from '@/types'
 
 interface Props {
   isOpen: boolean
+  redirectClassType?: string | null
 }
 
 interface Emits {
@@ -176,7 +177,8 @@ async function handleLogin(): Promise<void> {
     if (authStore.isAdmin) {
       router.push('/admin')
     } else {
-      router.push('/dashboard')
+      const query = props.redirectClassType ? { classType: props.redirectClassType } : {}
+      router.push({ name: 'dashboard', query })
     }
   } catch (err) {
     // Ошибка уже в store
@@ -190,7 +192,8 @@ async function handleRegister(): Promise<void> {
   try {
     await authStore.register(registerData.value)
     handleClose()
-    router.push('/dashboard')
+    const query = props.redirectClassType ? { classType: props.redirectClassType } : {}
+    router.push({ name: 'dashboard', query })
   } catch (err) {
     // Ошибка уже в store
   }

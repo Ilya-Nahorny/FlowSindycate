@@ -96,9 +96,18 @@
             v-model="bookingData.date"
             type="date"
             class="form-input"
-            :min="new Date().toISOString().split('T')[0]"
+            :min="minDate"
+            :max="maxDate"
+            :disabled="!selectedClass"
+            @change="validateSelectedDate"
             required
           />
+          <div v-if="dateError" class="form-error-message">
+            {{ dateError }}
+          </div>
+          <div v-if="selectedClass && availableDatesInfo" class="form-note form-note--info">
+            {{ availableDatesInfo }}
+          </div>
         </div>
 
         <div v-if="classesStore.error" class="form-error">
@@ -155,6 +164,7 @@ const bookingData = ref<BookClassData>({
   classType: ClassType.SINGLE,
   date: ''
 })
+const dateError = ref('')
 
 /**
  * Проверка, является ли это первым занятием
@@ -182,6 +192,130 @@ function getGroupName(groupId: string): string {
 }
 
 /**
+ * Минимальная доступная дата (сегодня)
+ */
+const minDate = computed(() => {
+  return new Date().toISOString().split('T')[0]
+})
+
+/**
+ * Максимальная доступная дата (3 месяца вперед)
+ */
+const maxDate = computed(() => {
+  const date = new Date()
+  date.setMonth(date.getMonth() + 3)
+  return date.toISOString().split('T')[0]
+})
+
+/**
+ * Информация о доступных датах
+ */
+const availableDatesInfo = computed(() => {
+  if (!selectedClass.value) return ''
+  
+  const dayName = t(`schedule.days.${selectedClass.value.dayOfWeek}`)
+  const nextDates = getNextAvailableDates(3) // Показываем 3 ближайшие даты
+  if (nextDates.length > 0) {
+    const datesStr = nextDates.map(d => formatDateShort(d)).join(', ')
+    return `${t('dashboard.availableOn')} ${dayName}. ${t('dashboard.nextDates')}: ${datesStr}`
+  }
+  return `${t('dashboard.availableOn')} ${dayName}`
+})
+
+/**
+ * Получение ближайших доступных дат для выбранного занятия
+ */
+function getNextAvailableDates(count: number = 5): Date[] {
+  if (!selectedClass.value) return []
+  
+  const dates: Date[] = []
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  
+  const dayOfWeekMap: Record<string, number> = {
+    'sunday': 0,
+    'monday': 1,
+    'tuesday': 2,
+    'wednesday': 3,
+    'thursday': 4,
+    'friday': 5,
+    'saturday': 6
+  }
+  
+  const targetDay = dayOfWeekMap[selectedClass.value.dayOfWeek]
+  const currentDay = today.getDay()
+  
+  // Вычисляем количество дней до следующего нужного дня недели
+  let daysUntilTarget = (targetDay - currentDay + 7) % 7
+  if (daysUntilTarget === 0) {
+    // Если сегодня нужный день, берем следующий
+    daysUntilTarget = 7
+  }
+  
+  // Находим ближайшие даты
+  for (let i = 0; i < count; i++) {
+    const date = new Date(today)
+    date.setDate(today.getDate() + daysUntilTarget + (i * 7))
+    dates.push(date)
+  }
+  
+  return dates
+}
+
+/**
+ * Форматирование даты в короткий формат
+ */
+function formatDateShort(date: Date): string {
+  const day = String(date.getDate()).padStart(2, '0')
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  return `${day}.${month}`
+}
+
+/**
+ * Валидация выбранной даты
+ * Проверяет, что выбранная дата соответствует дню недели занятия
+ */
+function validateSelectedDate(): void {
+  if (!selectedClass.value || !bookingData.value.date) {
+    dateError.value = ''
+    return
+  }
+
+  const selectedDate = new Date(bookingData.value.date)
+  const selectedDayOfWeek = getDayOfWeek(selectedDate)
+  const classDayOfWeek = selectedClass.value.dayOfWeek
+
+  // Преобразуем день недели занятия в числовой формат (0 = воскресенье, 1 = понедельник, ...)
+  const dayOfWeekMap: Record<string, number> = {
+    'sunday': 0,
+    'monday': 1,
+    'tuesday': 2,
+    'wednesday': 3,
+    'thursday': 4,
+    'friday': 5,
+    'saturday': 6
+  }
+
+  const expectedDay = dayOfWeekMap[classDayOfWeek]
+  
+  if (selectedDayOfWeek !== expectedDay) {
+    const dayName = t(`schedule.days.${classDayOfWeek}`)
+    dateError.value = t('dashboard.dateError.wrongDay', { day: dayName })
+    bookingData.value.date = ''
+    return
+  }
+
+  dateError.value = ''
+}
+
+/**
+ * Получение дня недели из даты (0 = воскресенье, 1 = понедельник, ...)
+ */
+function getDayOfWeek(date: Date): number {
+  return date.getDay()
+}
+
+/**
  * Открытие модального окна записи
  */
 function openBookingModal(scheduleClass: ScheduleClass): void {
@@ -197,6 +331,7 @@ function openBookingModal(scheduleClass: ScheduleClass): void {
     classType: ClassType.SINGLE,
     date: ''
   }
+  dateError.value = ''
   isBookingModalOpen.value = true
 }
 
@@ -206,9 +341,16 @@ function openBookingModal(scheduleClass: ScheduleClass): void {
 async function handleBookClass(): Promise<void> {
   if (!selectedClass.value) return
 
+  // Проверяем валидность даты перед отправкой
+  validateSelectedDate()
+  if (dateError.value || !bookingData.value.date) {
+    return
+  }
+
   try {
     await classesStore.bookClass(bookingData.value)
     isBookingModalOpen.value = false
+    dateError.value = ''
     await userStore.loadBookings()
   } catch (err) {
     // Ошибка уже в store

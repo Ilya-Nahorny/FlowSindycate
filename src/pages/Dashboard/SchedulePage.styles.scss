@@ -134,6 +134,26 @@
   font-size: var(--font-size-sm);
 }
 
+.form-error-message {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  color: #ef4444;
+  font-size: var(--font-size-xs);
+  margin-top: calc(var(--spacing-xs) * -1);
+}
+
+.form-note {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  margin-top: var(--spacing-xs);
+
+  &--info {
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: var(--color-primary);
+  }
+}
+
 .form-note {
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--radius-md);

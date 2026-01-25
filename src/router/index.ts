@@ -13,7 +13,6 @@ import PhilosophyPage from '@/pages/Philosophy/PhilosophyPage.vue'
 import ClassesPage from '@/pages/Classes/ClassesPage.vue'
 import SchedulePage from '@/pages/Schedule/SchedulePage.vue'
 import TrainersPage from '@/pages/Trainers/TrainersPage.vue'
-import JoinPage from '@/pages/Join/JoinPage.vue'
 import ContactPage from '@/pages/Contact/ContactPage.vue'
 
 // Импорт страниц dashboard
@@ -86,11 +85,6 @@ const routes: RouteRecordRaw[] = [
         path: 'trainers',
         name: 'trainers',
         component: TrainersPage
-      },
-      {
-        path: 'join',
-        name: 'join',
-        component: JoinPage
       },
       {
         path: 'contact',

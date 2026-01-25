@@ -71,7 +71,7 @@ import { useClassesStore } from '@/stores/classes'
  * Страница управления посещаемостью
  */
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const adminStore = useAdminStore()
 const classesStore = useClassesStore()
 
@@ -99,7 +99,8 @@ function getClassName(scheduleClassId: string): string {
  */
 function formatDate(dateString: string): string {
   const date = new Date(dateString)
-  return date.toLocaleDateString('ru-RU', {
+  const dateLocale = locale.value === 'ru' ? 'ru-RU' : locale.value === 'pl' ? 'pl-PL' : 'en-US'
+  return date.toLocaleDateString(dateLocale, {
     day: 'numeric',
     month: 'long',
     year: 'numeric'

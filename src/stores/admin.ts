@@ -4,6 +4,7 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import type { User, Child, Attendance, FinancialStats, AttendanceStats } from '@/types'
+import { UserRole } from '@/types'
 import { useAuthStore } from './auth'
 import { useClassesStore } from './classes'
 
@@ -52,7 +53,8 @@ export const useAdminStore = defineStore('admin', () => {
         }
       })
 
-      users.value = allUsers
+      // Фильтруем администраторов - они не должны отображаться в списке участников
+      users.value = allUsers.filter(user => user.role === UserRole.USER)
     } catch (err: any) {
       error.value = err.message || 'Ошибка загрузки пользователей'
     } finally {

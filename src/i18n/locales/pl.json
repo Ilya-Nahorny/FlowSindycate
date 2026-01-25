@@ -96,8 +96,11 @@
       "invalidYear": "Nieprawidłowy rok (musi być między 1900 a bieżącym rokiem)",
       "invalidDate": "Ta data nie istnieje",
       "futureDate": "Data nie może być w przyszłości",
-      "tooOld": "Wiek nie może przekraczać 120 lat"
+      "tooOld": "Wiek nie może przekraczać 120 lat",
+      "wrongDay": "Te zajęcia są dostępne tylko w {day}. Wybierz właściwy dzień tygodnia."
     },
+    "availableOn": "Dostępne tylko w",
+    "nextDates": "Najbliższe daty",
     "validation": {
       "firstNameRequired": "Imię jest wymagane",
       "firstNameMinLength": "Imię musi mieć co najmniej 2 znaki",
@@ -203,11 +206,36 @@
   "pages": {
     "classes": {
       "title": "Zajęcia",
-      "content": "Treść strony zajęć"
+      "bookButton": "Zapisz się",
+      "types": {
+        "beginners": {
+          "title": "Zajęcia grupowe dla początkujących",
+          "description": "Idealne dla tych, którzy dopiero zaczynają swoją przygodę z breakingiem. Naucz się podstaw w wspierającym środowisku grupowym.",
+          "age": "Od 6 lat"
+        },
+        "advanced": {
+          "title": "Zajęcia grupowe dla zaawansowanych",
+          "description": "Dla tych, którzy opanowali podstawy. Podnieś swoje umiejętności na wyższy poziom dzięki wymagającym rutynom i technikom.",
+          "age": "Dla doświadczonych tancerzy"
+        },
+        "individual": {
+          "title": "Treningi indywidualne",
+          "description": "Sesje jeden na jeden dostosowane do Twoich celów. Otrzymaj spersonalizowaną uwagę i przyspiesz swój postęp.",
+          "age": "Wszystkie grupy wiekowe"
+        }
+      }
     },
     "trainers": {
       "title": "Trenerzy",
-      "content": "Treść strony trenerów"
+      "experience": "Doświadczenie",
+      "approach": "Podejście do nauczania",
+      "trainers": {
+        "ilya": {
+          "description": "Profesjonalny instruktor breakingu z wieloletnim doświadczeniem w nauczaniu i występach.",
+          "experience": "Ponad 10 lat doświadczenia w breakingu, wiele zwycięstw w konkursach oraz rozległe doświadczenie w nauczaniu.",
+          "approach": "Skupia się na budowaniu silnych fundamentów, jednocześnie zachęcając do kreatywności i wyrażania siebie. Łączy tradycyjne techniki breakingu z nowoczesnymi podejściami, aby pomóc uczniom znaleźć swój unikalny styl."
+        }
+      }
     },
     "join": {
       "title": "Dołącz",
@@ -215,7 +243,47 @@
     },
     "contact": {
       "title": "Kontakty",
-      "content": "Treść strony kontaktów"
+      "sendMessage": "Wyślij nam wiadomość",
+      "contactInfo": "Informacje kontaktowe",
+      "email": "Email",
+      "phone": "Telefon",
+      "socialMedia": "Media społecznościowe",
+      "locations": {
+        "title": "Lokalizacje",
+        "breakingSpot": {
+          "name": "Breaking Spot",
+          "address": "23 Lutego 26, 61-743 Poznań",
+          "domofon": "Domofon: 122"
+        },
+        "bodyLabOne": {
+          "name": "Body Lab One",
+          "address": "Marcelińska 27, 60-801 Poznań"
+        }
+      },
+      "form": {
+        "name": "Imię",
+        "email": "Email",
+        "message": "Wiadomość",
+        "namePlaceholder": "Wprowadź swoje imię",
+        "emailPlaceholder": "Wprowadź swój email",
+        "messagePlaceholder": "Wprowadź swoją wiadomość",
+        "send": "Wyślij wiadomość",
+        "success": "Dziękujemy! Twoja wiadomość została wysłana pomyślnie.",
+        "sendError": "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie.",
+        "validationError": "Proszę wypełnić wszystkie pola poprawnie.",
+        "spamDetected": "Wykryto spam. Spróbuj ponownie.",
+        "tooManyRequests": "Poczekaj chwilę przed wysłaniem kolejnej wiadomości.",
+        "validation": {
+          "nameRequired": "Imię jest wymagane",
+          "nameMinLength": "Imię musi mieć co najmniej 2 znaki",
+          "nameMaxLength": "Imię nie może przekraczać 100 znaków",
+          "emailRequired": "Email jest wymagany",
+          "emailInvalid": "Wprowadź poprawny adres email",
+          "messageRequired": "Wiadomość jest wymagana",
+          "messageMinLength": "Wiadomość musi mieć co najmniej 10 znaków",
+          "messageMaxLength": "Wiadomość nie może przekraczać 2000 znaków"
+        }
+      }
     },
     "services": {
       "title": "Usługi",

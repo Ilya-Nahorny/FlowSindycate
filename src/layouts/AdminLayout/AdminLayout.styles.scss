@@ -3,21 +3,25 @@
  */
 
 .admin-layout {
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   background: var(--color-bg-primary);
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .admin-layout__sidebar {
   width: 280px;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   border-right: 1px solid var(--color-border);
-  position: sticky;
-  top: 0;
   height: 100vh;
   overflow-y: auto;
+  overflow-x: hidden;
+  flex-shrink: 0;
 }
 
 .admin-layout__sidebar-header {
@@ -113,6 +117,7 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
+  flex-wrap: wrap;
 }
 
 .admin-layout__logout {
@@ -137,6 +142,10 @@
   flex: 1;
   padding: var(--spacing-2xl);
   overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
 }
 
 @media (max-width: 1024px) {

@@ -64,11 +64,6 @@ const navigationItems = computed(() => [
     path: '/trainers'
   },
   {
-    name: 'join',
-    label: t('navigation.join'),
-    path: '/join'
-  },
-  {
     name: 'contact',
     label: t('navigation.contact'),
     path: '/contact'
